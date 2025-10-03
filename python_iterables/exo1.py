@@ -33,13 +33,30 @@ print(common)
 
 # Given a list of words ["Elie", "Tim", "Matt"], return a new list with each word reversed and in lowercase: ["eile", "mit", "ttam"].
 
+words = ["Elie", "Tim", "Matt"]
+result = [word[::-1].lower() for word in words]
+print(result) 
+
 # Given two strings "first" and "third", return a new list of the letters that are present in both strings: ["i", "r", "t"].
+string1 = "first"
+string2 = "third"
+common_letters = list(set(string1) & set(string2))
+print(common_letters)
 
 # For all numbers between 1 and 100, return a list of the numbers that are divisible by 12: [12, 24, 36, 48, 60, 72, 84, 96].
+divisible_by_12 = [i for i in range(1, 101) if i % 12 == 0]
+print(divisible_by_12) 
 
 # Given the string "amazing", return a list with all the vowels removed: ["m", "z", "n", "g"].
+word = "amazing"
+vowels = "aeiouy"
+result = [letter for letter in word if letter not in vowels]
+print(result) 
 
 # Generate a list with the following value: [[0, 1, 2], [0, 1, 2], [0, 1, 2]].
+list = [0, 1, 2]
+result = [list for i in range(3)]
+print(result)
 
 # Generate a list with the following structure:
 
@@ -55,3 +72,6 @@ print(common)
 #   [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
 #   [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 # ]
+list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+result = [list for i in range(10)]
+print(result)
