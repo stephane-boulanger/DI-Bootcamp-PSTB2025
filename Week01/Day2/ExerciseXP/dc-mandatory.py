@@ -451,3 +451,33 @@ main()
 # "Adding [topping] to your pizza."
 # After exiting the loop, print all the toppings and the total cost of the pizza.
 # The base price is $10, and each topping adds $2.50.
+
+# Exercise 8: Pizza Toppings
+
+# Liste pour stocker les toppings
+toppings = []
+
+# Prix de base
+base_price = 10
+topping_price = 2.50
+
+print("=== Pizza Topping Builder ===")
+print("Enter 'quit' when you're done.\n")
+
+# Boucle pour demander les toppings
+while True:
+    topping = input("Enter a topping: ")
+    
+    if topping.lower() == 'quit':
+        break
+    
+    toppings.append(topping)
+    print(f"Adding {topping} to your pizza.")
+
+# Afficher le résumé
+print("\n=== Your Pizza ===")
+print(f"Toppings: {', '.join(toppings)}")
+
+# Calculer le coût total
+total_cost = base_price + (len(toppings) * topping_price)
+print(f"Total cost: ${total_cost:.2f}")
