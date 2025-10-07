@@ -34,6 +34,14 @@ print(calcul)
 # 🌟 Exercise 3 : What’s your name ?
 # Write code that asks the user for their name and determines whether or not you have the same name, print out a funny message based on the outcome.
 
+my_name = "Stephane"
+ask_name = input("What's your name?")
+
+if my_name == ask_name:
+    print(f"Great {ask_name}, are you my clone? ")
+else:
+    print("Sorry")
+    
 # 🌟 Exercise 4 : Tall enough to ride a roller coaster
 # 1. Write code that will ask the user for their height in centimeters.
 # 2. If they are over 145cm print a message that states they are tall enough to ride.
