@@ -1,37 +1,35 @@
-from dog import Dog
-
-# Step 2: Create the PetDog Class
-
-# Create a class called PetDog that inherits from the Dog class.
-# Add a trained attribute to the __init__ method, with a default value of False.
-# trained means that the dog is trained to do some tricks.
-# Implement a train() method that prints the output of bark() and sets trained to True.
-# Implement a play(*args) method that prints “ all play together”.
-# *args on this method is a list of dog instances.
-# Implement a do_a_trick() method that prints a random trick if trained is True.
-# Use this list for the ramdom tricks:
-# tricks = ["does a barrel roll", "stands on his back legs", "shakes your hand", "plays dead"]
-# Choose a rendom index from it each time the method is called.
-
-class PetDog(Dog):
-        def __init__(self, name, age, weight):
-            super().__init__(name, age, weight)
-            self.trained = False
-
-        def train(self): 
-            print(self.bark())
-            self.trained = True
-
-        def play(self, *args):
-        # ... code to print play message ...
-
-         def do_a_trick(self): 
-        if self.trained:
-            tricks = ["does a barrel roll", "stands on his back legs", "shakes your hand", "plays dead"]
-            print(f"{self.name} {random.choice(tricks)}")
+class Person:
+    def __init__(self, first_name, age):
+        self.first_name = first_name
+        self.age = age
+        self.last_name = ""
+    
+    def is_18(self):
+        return self.age >= 18
 
 
-my_dog = PetDog("Fido", 2, 10)
-my_dog.train()
-my_dog.play("Buddy", "Max")
-my_dog.do_a_trick()
+class Family:
+    def __init__(self, last_name):
+        self.last_name = last_name
+        self.members = []
+    
+    def born(self, first_name, age):
+        new_person = Person(first_name, age)
+        new_person.last_name = self.last_name
+        self.members.append(new_person)
+    
+    def check_majority(self, first_name):
+        for member in self.members:
+            if member.first_name == first_name:
+                if member.is_18():
+                    print("You are over 18, your parents Jane and John accept that you will go out with your friends")
+                else:
+                    print("Sorry, you are not allowed to go out with your friends.")
+                return
+    
+    def family_presentation(self):
+        print(f"The {self.last_name} family:")
+        for member in self.members:
+            print(f"{member.first_name} {member.last_name}, {member.age} years old")
+
+            
