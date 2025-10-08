@@ -3,8 +3,6 @@
 # Use the provided Pets and Cat classes to create a Siamese breed, instantiate cat objects, and use the Pets class to manage them.
 # See the example below, before diving in.
 
-
-
 # Step 1: Create the Siamese Class
 
 # Create a class called Siamese that inherits from the Cat class.
@@ -87,7 +85,6 @@ class Cat:
     def walk(self):
         return f"{self.name} is just walking around" 
 
-
 class Siamese(Cat):
     def sing(self, sound):
         return(f"{sound}")
@@ -152,7 +149,6 @@ class Dog:
         else:
                 print(f"{my_dog.name} loose!")
       
-
 # Step 2: Create Dog Instances
 
 # Create three instances of the Dog class with different names, ages, and weights.
@@ -166,35 +162,97 @@ dog2 = Dog("Mimi", 3, 10)
 # Call the bark(), run_speed(), and fight() methods on the dog instances to test their functionality.
 
 print(dog1.bark())
-print()
+
 print(dog2.run_speed())
-print()
 
 result = my_dog.fight(dog2)
 
-print(result)
+# 🌟 Exercise 3: Dogs Domesticated
+# Goal: Create a PetDog class that inherits from Dog and adds training and tricks.
+
+# Instructions:
+
+# Step 1: Import the Dog Class
+
+# In a new Python file, import the Dog class from the previous exercise.
+
+from dog import Dog
+import random
+
+# Step 2: Create the PetDog Class
+
+# Create a class called PetDog that inherits from the Dog class.
+# Add a trained attribute to the __init__ method, with a default value of False.
+# trained means that the dog is trained to do some tricks.
+# Implement a train() method that prints the output of bark() and sets trained to True.
+# Implement a play(*args) method that prints “ all play together”.
+# *args on this method is a list of dog instances.
+# Implement a do_a_trick() method that prints a random trick if trained is True.
+# Use this list for the ramdom tricks:
+# tricks = ["does a barrel roll", "stands on his back legs", "shakes your hand", "plays dead"]
+# Choose a rendom index from it each time the method is called.
+
+class PetDog(Dog):
+        def __init__(self, name, age, weight):
+            super().__init__(name, age, weight)
+            self.trained = False
+
+        def train(self): 
+            print(self.bark())
+            self.trained = True
+
+        def play(self, *args):
+                dog_names = self.name
+                for dog in args:
+                     dog_names.append(dog.name)
+                all_names = ", ".join(dog_names)
+                print(f"{all_names} all play together")
+
+        def do_a_trick(self): 
+                if self.trained:
+                        tricks = ["does a barrel roll", "stands on his back legs", "shakes your hand", "plays dead"]
+                        print(f"{self.name} {random.choice(tricks)}")
+
+print()
+my_dog = PetDog("Fido", 2, 10)
+my_dog.train()
+buddy = PetDog("Buddy", 3, 15)
+max_dog = PetDog("Max", 4, 20)
+
+my_dog.do_a_trick()
+
+# Step 3: Test PetDog Methods
+
+# Create instances of the PetDog class and test the train(), play(*args), and do_a_trick() methods.
+
+
+# Example:
+
+# # In a new file
+# # import the Dog class
+
+# class PetDog(Dog):
+#     def __init__(self, name, age, weight): <mark> no need to put the details in the function, you are giving the solution</mark>
+#         super().__init__(name, age, weight)
+#         self.trained = False
+
+#     def train(self): <mark> no need to put the details in the function, you are giving the solution</mark>
+#         print(self.bark())
+#         self.trained = True
+
+#     def play(self, *args):
+#         # ... code to print play message ...
+
+#     def do_a_trick(self): <mark> no need to put the details in the function, you are giving the solution</mark>
+#         if self.trained:
+#             tricks = ["does a barrel roll", "stands on his back legs", "shakes your hand", "plays dead"]
+#             print(f"{self.name} {random.choice(tricks)}")
+
+# # Test PetDog methods
+# my_dog = PetDog("Fido", 2, 10)
+# my_dog.train()
+# my_dog.play("Buddy", "Max")
+# my_dog.do_a_trick()
 
 
 
-# Example (Conceptual, No Direct Solution):
-
-# class Dog:
-#     def __init__(self, name, age, weight):
-#         # ... code to initialize attributes ...
-
-#     def bark(self):
-#         # ... code to return bark message ...
-
-#     def run_speed(self):
-#         # ... code to return run speed ...
-
-#     def fight(self, other_dog):
-#         # ... code to determine and return winner ...
-
-# # Step 2: Create dog instances
-# #... your code here
-
-# # Step 3: Test dog methods
-# print(dog1.bark())
-# print(dog2.run_speed())
-# print(dog1.fight(dog2))
