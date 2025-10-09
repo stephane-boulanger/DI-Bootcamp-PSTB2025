@@ -1,0 +1,11 @@
+{
+  "dunder init": {
+    "scope": "python",
+    "prefix": "init",
+    "body": [
+      "def __init__(self${1})${2}:",
+      "    ${3:pass}"
+    ],
+    "description": "Insert Python __init__ method"
+  }
+}

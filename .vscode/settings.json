@@ -1,0 +1,14 @@
+{
+  // --- Python & venv ---
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+  "python.terminal.activateEnvironment": true,
+
+  // --- Formatter Black ---
+  "editor.defaultFormatter": "ms-python.black-formatter",
+  "editor.formatOnSave": true,
+
+  // --- Snippets : pour que Tab accepte et qu'ils soient en haut ---
+  "editor.tabCompletion": "on",
+  "editor.snippetSuggestions": "top",
+  "editor.quickSuggestions": { "other": true, "comments": true, "strings": true }
+}

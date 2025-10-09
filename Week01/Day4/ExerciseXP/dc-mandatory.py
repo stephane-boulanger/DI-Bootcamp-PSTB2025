@@ -201,9 +201,11 @@ class PetDog(Dog):
             print(self.bark())
             self.trained = True
 
-        def play(self, *args):
+        def play(self, *dog_names):
                 dog_names = self.name
-                for dog in args:
+                for dog in dog_names:
+                    #  lst = lst +" " + ar.name
+                    # print(f"{lst} all play together") 
                      dog_names.append(dog.name)
                 all_names = ", ".join(dog_names)
                 print(f"{all_names} all play together")
