@@ -47,6 +47,14 @@ else:
 # 2. If they are over 145cm print a message that states they are tall enough to ride.
 # 3. If they are not tall enough print a message that says they need to grow some more to ride.
 
+height = int(input("What's your height ?"))
+
+if height > 145:
+    print("You're tall enough to ride")
+else:
+    print("Sorry, you need to grow a bit more to ride")
+
+
 # 🌟 Exercise 5 : Favorite Numbers
 # Key Python Topics:
 # * Sets
@@ -61,6 +69,17 @@ else:
 # * Concatenate my_fav_numbers and friend_fav_numbers to create a new set called our_fav_numbers.
 #    * Note: Sets are unordered collections, so ensure no duplicate numbers are added.
 
+my_fav_numbers = {26, 4}
+
+my_fav_numbers.add(12)
+my_fav_numbers.add(9)
+my_fav_numbers.remove(9)
+friend_fav_numbers = {14, 1, 51}
+
+our_fav_numbers = my_fav_numbers.union(friend_fav_numbers)
+
+print("Our favorite numbers:", our_fav_numbers)
+
 # 🌟 Exercise 6: Tuple
 # Key Python Topics:
 # * Tuples (immutability)
@@ -68,6 +87,12 @@ else:
 # Instructions:
 # * Given a tuple of integers, try to add more integers to the tuple.
 # * Hint: Tuples are immutable, meaning they cannot be changed after creation. Think about why you can’t add more integers to a tuple.
+
+my_tuple = (1, 2, 3)
+#my_tuple.add(4) error because we can't modify a tuple
+print("Tuples are immutable, you cannot add or remove items once created.")
+
+
 
 # 🌟 Exercise 7: List Manipulation
 # Key Python Topics:
@@ -84,6 +109,21 @@ else:
 # * Empty the list.
 # * Print the final state of the list.
 
+basket = ["Banana", "Apples", "Oranges", "Blueberries"]
+
+basket.remove("Banana")
+basket.remove("Blueberries")
+basket.append("Kiwi")
+basket.insert(0, "Apples")
+
+print("Apples appear", basket.count("Apples"), "times.")
+
+basket.clear()
+print("Final basket:", basket)
+
+basket.clear()
+
+print(basket)
 # 🌟 Exercise 8 : Sandwich Orders
 # Using the list below :
 # sandwich_orders = ["Tuna sandwich", "Pastrami sandwich", "Avocado sandwich", "Pastrami sandwich", "Egg sandwich", "Chicken sandwich", "Pastrami sandwich"].
@@ -97,3 +137,24 @@ else:
 # I made your avocado sandwich
 # I made your egg sandwich
 # I made your chicken sandwich
+
+sandwich_orders = [
+    "Tuna sandwich", "Pastrami sandwich", "Avocado sandwich",
+    "Pastrami sandwich", "Egg sandwich", "Chicken sandwich",
+    "Pastrami sandwich"
+]
+
+print("Sorry, we're out of pastrami today 🥲")
+
+# Remove all Pastrami sandwiches
+while "Pastrami sandwich" in sandwich_orders:
+    sandwich_orders.remove("Pastrami sandwich")
+
+finished_sandwiches = []
+
+# Prepare each sandwich (simple for loop)
+for sandwich in sandwich_orders:
+    print(f"I made your {sandwich.lower()}")
+    finished_sandwiches.append(sandwich)
+
+print("\nAll sandwiches made:", finished_sandwiches)    

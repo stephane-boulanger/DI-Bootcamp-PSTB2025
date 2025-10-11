@@ -61,12 +61,13 @@ class Game:
         
         # 5. Retourner
         return result
-    
-if __name__ == "__main__":
+
+   #TEST 
+# if __name__ == "__main__":
    
-    game = Game()
-    result = game.play()
-    print(f"\nResult: {result}")
+#     game = Game()
+#     result = game.play()
+#     print(f"\nResult: {result}")
     
     
  
